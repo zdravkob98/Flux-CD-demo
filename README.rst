@@ -228,16 +228,16 @@ FLUX
 	git push
 
 7. Watch Flux sync the application
-	Use the flux get command to watch the github-battle app
+	Use the flux get command to watch the podinfo app
 
 	flux get kustomizations --watch
 
-8. Check github-battle has been deployed on your cluster:
+8. Check podinfo has been deployed on your cluster:
 
 	kubectl -n default get deployments,services
 
-	Changes made to the github-battle Kubernetes manifests in the master branch are reflected in your cluster.
+	Changes made to the podinfo Kubernetes manifests in the master branch are reflected in your cluster.
 
-	When a Kubernetes manifest is removed from the github-battle repository, Flux removes it from your cluster.
+	When a Kubernetes manifest is removed from the podinfo repository, Flux removes it from your cluster.
 	When you delete a Kustomization from the fleet-infra repository,
 	Flux removes all Kubernetes objects previously applied from that Kustomization.
