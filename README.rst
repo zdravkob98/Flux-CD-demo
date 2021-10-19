@@ -212,19 +212,19 @@ FLUX
         --export > ./clusters/my-cluster/podinfo-source.yaml
 	git add -A && git commit -m "Add podinfo GitRepository" && git push
 
-6. Deploy github-battle application
-	Configure Flux to build and apply the kustomize directory located in the github-battle repository.
-	Use the flux create command to create a Kustomization that applies the github-battle deployment.
+6. Deploy podinfo  application
+	Configure Flux to build and apply the kustomize directory located in the podinfo  repository.
+	Use the flux create command to create a Kustomization that applies the podinfo deployment.
 
-	flux create kustomization github-battle \
-	  --target-namespace=default \
-	  --source=github-battle \
-	  --path="./kustomize" \
-	  --prune=true \
-	  --interval=5m \
-	  --export > ./clusters/my-cluster/github-battle-kustomization.yaml
+	flux create kustomization podinfo \
+      --target-namespace=default \
+      --source=podinfo \
+      --path="./kustomize" \
+      --prune=true \
+      --interval=5m \
+      --export > ./clusters/my-cluster/podinfo-kustomization.yaml
 
-	git add -A && git commit -m "Add github-battle Kustomization"
+	git add -A && git commit -m "Add podinfo Kustomization"
 	git push
 
 7. Watch Flux sync the application
